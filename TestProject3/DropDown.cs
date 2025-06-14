@@ -12,6 +12,8 @@ namespace TestProject3
     {
         IWebDriver driver;
 
+        
+
         [SetUp]
         public void SetUp()
         {
@@ -89,10 +91,17 @@ namespace TestProject3
                         File.AppendAllText(path, row.Text + "\n");
                     }
                 }
+
             }
 
+           
+        }
+        [TearDown]
+        public void TearDown()
+        {
             // Quit the driver
             driver.Quit();
+            driver.Dispose();
         }
     }
 }
