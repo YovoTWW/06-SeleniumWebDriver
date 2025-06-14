@@ -1,7 +1,7 @@
 # This workflow will build a .NET project
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
 
-name: Build And Test House Renting
+name: Build And Test Web Driver
 
 on:
   push:
@@ -25,5 +25,9 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Run Unit-Tests
-      run: dotnet test --no-build --verbosity normal
+    - name: Run Project1 UI Tests
+      run: dotnet test TestProject1 --no-build --verbosity normal
+    - name: Run Project2 UI Tests
+      run: dotnet test TestProject2 --no-build --verbosity normal
+    - name: Run Project3 UI Tests
+      run: dotnet test TestProject3 --no-build --verbosity normal
