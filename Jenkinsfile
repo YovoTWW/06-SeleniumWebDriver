@@ -33,13 +33,37 @@ pipeline {
             }
         }
 
-        stage('Run tests') {
+        stage('Run test 1') {
             steps {
                 script {
                 if (isUnix()) {
-                    sh 'dotnet test'
+                    sh 'dotnet test TestProject1'
                 } else {
-                    bat 'dotnet test'
+                    bat 'dotnet test TestProject1'
+                }
+                    }
+            }
+        }
+
+        stage('Run test 2') {
+            steps {
+                script {
+                if (isUnix()) {
+                    sh 'dotnet test TestProject2'
+                } else {
+                    bat 'dotnet test TestProject2'
+                }
+                    }
+            }
+        }
+
+        stage('Run test 3') {
+            steps {
+                script {
+                if (isUnix()) {
+                    sh 'dotnet test TestProject3'
+                } else {
+                    bat 'dotnet test TestProject3'
                 }
                     }
             }
